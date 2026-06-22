@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заявка на сервер — LYRA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <i class="fas fa-cube"></i>
+                <span>LYRA</span>
+            </a>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="index.html" class="btn-secondary" style="padding: 8px 20px; font-size: 14px;">
+                    <i class="fas fa-arrow-left"></i> На главную
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="apply-page" id="applyPage">
+        <div class="container">
+            <div class="apply-wrapper">
+
+                <div id="formContainer">
+                    <div class="apply-header">
+                        <div class="apply-icon">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h1>Подать заявку на сервер</h1>
+                        <p class="apply-sub">
+                            Заполните анкету, и мы рассмотрим вашу заявку в течение 24 часов.
+                            После одобрения вы получите письмо с доступом.
+                        </p>
+                    </div>
+
+                    <form class="apply-form" id="applyForm" action="https://formsubmit.co/sony.krush@gmail.com" method="POST">
+
+                        <input type="hidden" name="_subject" value="Новая заявка на сервер LYRA!" />
+                        <input type="hidden" name="_captcha" value="false" />
+                        <input type="hidden" name="_template" value="table" />
+                        <input type="hidden" name="_next" value="https://твой-сайт.ru/apply.html#success" />
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Электронная почта <span class="required">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="sony.krush@gmail.com" required />
+                            <span class="form-hint">На этот адрес придёт уведомление о решении.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telegram">
+                                <i class="fab fa-telegram-plane"></i> Ваш Telegram (ссылка или юзернейм) <span class="required">*</span>
+                            </label>
+                            <input type="text" id="telegram" name="telegram" placeholder="@username или https://t.me/..." required />
+                            <span class="form-hint">Для быстрой связи, если понадобится уточнить детали.</span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeTelegram" name="agreeTelegram" value="Да" required />
+                                <span class="checkmark"></span>
+                                Подписаны ли вы на ТГК Проекта? <strong>«LYRA 3 сезон | Minecraft Server»</strong> <span class="required">*</span>
+                            </label>
+                            <span class="form-hint" style="margin-top: 4px;">Подписка обязательна для получения доступа.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nickname">
+                                <i class="fas fa-user"></i> Ваш ник в игре <span class="required">*</span>
+                            </label>
+                            <input type="text" id="nickname" name="nickname" placeholder="Введите ваш игровой ник" required />
+                            <span class="form-hint">ПРИЛИЧНЫЙ НИК</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="streaming">
+                                <i class="fas fa-broadcast-tower"></i> Стримите ли вы где-нибудь? <span class="required">*</span>
+                            </label>
+                            <input type="text" id="streaming" name="streaming" placeholder="Ник / платформа / прочерк" required />
+                            <span class="form-hint">Пример: WERSTAPEN - TWITCH или просто «-»</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">
+                                <i class="fas fa-calendar-alt"></i> Сколько вам лет? <span class="required">*</span>
+                            </label>
+                            <input type="number" id="age" name="age" placeholder="Например: 18" min="10" max="99" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="timezone">
+                                <i class="fas fa-clock"></i> Ваш часовой пояс от МСК
+                            </label>
+                            <input type="text" id="timezone" name="timezone" placeholder="Пример: +9 от МСК" />
+                            <span class="form-hint">Укажите разницу с Московским временем.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="source">
+                                <i class="fas fa-search"></i> От кого вы узнали о сервере? <span class="required">*</span>
+                            </label>
+                            <input type="text" id="source" name="source" placeholder="Пример: WERSTAPEN - TWITCH" required />
+                            <span class="form-hint">Укажите имя стримера, друга или источник.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="twitch">
+                                <i class="fab fa-twitch"></i> Ваш ник на Twitch <span class="required">*</span>
+                            </label>
+                            <input type="text" id="twitch" name="twitch" placeholder="Ваш ник на Twitch" required />
+                            <span class="form-hint">Если нет - напишите «-».</span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agreeRules" name="agreeRules" value="Да" required />
+                                <span class="checkmark"></span>
+                                Я ознакомился(ась) с <a href="rules.html" class="rules-link" target="_blank">правилами сервера</a> и соглашаюсь их соблюдать. <span class="required">*</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i> Отправить заявку
+                        </button>
+
+                        <p class="form-footer">
+                            <i class="fas fa-lock"></i> Ваши данные в безопасности и не передаются третьим лицам.
+                        </p>
+                    </form>
+                </div>
+
+                <div id="successContainer" style="display: none; text-align: center; padding: 30px 0;">
+                    <div class="success-icon" style="font-size: 72px; color: #4ade80; margin-bottom: 20px;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 12px;">Заявка отправлена! 🎉</h2>
+                    <p style="color: var(--text-muted); font-size: 17px; max-width: 400px; margin: 0 auto 24px;">
+                        Спасибо! Мы рассмотрим вашу заявку в течение 24 часов.
+                        На указанную почту придёт уведомление о решении.
+                    </p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="index.html" class="btn-primary">
+                            <i class="fas fa-home"></i> На главную
+                        </a>
+                        <a href="rules.html" class="btn-secondary">
+                            <i class="fas fa-gavel"></i> Правила
+                        </a>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-top: 24px;">
+                        <i class="fas fa-envelope"></i> Письмо отправлено на вашу почту
+                    </p>
+                </div>
+
+                <div class="apply-alternative" id="alternativeBlock">
+                    <p>Уже есть аккаунт?</p>
+                    <a href="index.html" class="btn-secondary">
+                        <i class="fas fa-sign-in-alt"></i> Перейти на сервер
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <div class="footer-col">
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    <span>LYRA</span>
+                </div>
+                <p>LYRA 3 сезон - приватный Minecraft-сервер.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Соцсети</h4>
+                <div class="social-links">
+                    <a href="#" class="social-btn" id="telegramLink" aria-label="Telegram">
+                        <i class="fab fa-telegram-plane"></i> Telegram
+                    </a>
+                    <a href="#" class="social-btn" id="discordLink" aria-label="Discord">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Сервер</h4>
+                <p><i class="fas fa-server"></i> play.lyra-server.ru</p>
+                <p><i class="fas fa-code-branch"></i> Версия 1.21.8</p>
+                <p><i class="fas fa-microphone"></i> Plasmo Voice</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 LYRA Server. Неофициальный фанатский проект.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const isSuccess = urlParams.get('success') === 'true';
+
+            const formContainer = document.getElementById('formContainer');
+            const successContainer = document.getElementById('successContainer');
+            const alternativeBlock = document.getElementById('alternativeBlock');
+
+            if (isSuccess) {
+                formContainer.style.display = 'none';
+                successContainer.style.display = 'block';
+                alternativeBlock.style.display = 'none';
+                
+                document.title = 'Заявка отправлена — LYRA';
+            }
+
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const html = document.documentElement;
+                    const currentTheme = html.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    html.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+
+                    const icon = this.querySelector('i');
+                    icon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+                });
+            }
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+                const icon = document.querySelector('#themeToggle i');
+                if (icon) {
+                    icon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+                }
+            }
+
+            const telegramLink = document.getElementById('telegramLink');
+            const discordLink = document.getElementById('discordLink');
+
+            if (telegramLink && typeof SERVER_CONFIG !== 'undefined' && SERVER_CONFIG.social) {
+                telegramLink.href = SERVER_CONFIG.social.telegram;
+                telegramLink.target = '_blank';
+            }
+
+            if (discordLink && typeof SERVER_CONFIG !== 'undefined' && SERVER_CONFIG.social) {
+                discordLink.href = SERVER_CONFIG.social.discord;
+                discordLink.target = '_blank';
+            }
+
+            const form = document.getElementById('applyForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    const agreeRules = document.getElementById('agreeRules');
+                    const agreeTelegram = document.getElementById('agreeTelegram');
+
+                    if (!agreeRules.checked) {
+                        e.preventDefault();
+                        alert('Необходимо согласиться с правилами сервера.');
+                        return false;
+                    }
+
+                    if (!agreeTelegram.checked) {
+                        e.preventDefault();
+                        alert('Вы должны быть подписаны на Telegram-канал LYRA.');
+                        return false;
+                    }
+
+                    const submitBtn = form.querySelector('.submit-btn');
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+
+                });
+            }
+        });
+    </script>
+</body>
+</html>
