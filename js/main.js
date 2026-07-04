@@ -75,6 +75,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     updateStatus();
-    // Обновляем каждые 30 секунд
     setInterval(updateStatus, 30000);
 });

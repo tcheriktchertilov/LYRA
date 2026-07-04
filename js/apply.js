@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Собираем данные
         const email = document.getElementById('email').value.trim();
         const telegram = document.getElementById('telegram').value.trim();
         const agreeTelegram = document.getElementById('agreeTelegram').checked;
@@ -76,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function showNotification(message, type = 'info') {
-        // Удаляем старые уведомления
         const oldNotif = document.querySelector('.custom-notification');
         if (oldNotif) oldNotif.remove();
 
