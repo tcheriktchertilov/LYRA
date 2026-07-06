@@ -49,21 +49,19 @@
                         </p>
                     </div>
 
-                    <form class="apply-form" id="applyForm" action="https://formsubmit.co/nrudenko204@gmail.com" method="POST">
+                    <form class="apply-form" id="applyForm">
+                        <!-- Все поля формы -->
 
-                        <input type="hidden" name="_subject" value="Новая заявка на сервер LYRA!" />
-                        <input type="hidden" name="_captcha" value="false" />
-                        <input type="hidden" name="_template" value="table" />
-<input type="hidden" name="_next" value="https://formsubmit.co/thankyou" />
-
+                        <!-- 1. Электронная почта -->
                         <div class="form-group">
                             <label for="email">
                                 <i class="fas fa-envelope"></i> Электронная почта <span class="required">*</span>
                             </label>
-                            <input type="email" id="email" name="email" placeholder="nrudenko204@gmail.com" required />
+                            <input type="email" id="email" name="email" placeholder="sony.krush@gmail.com" required />
                             <span class="form-hint">На этот адрес придёт уведомление о решении.</span>
                         </div>
 
+                        <!-- 2. Telegram -->
                         <div class="form-group">
                             <label for="telegram">
                                 <i class="fab fa-telegram-plane"></i> Ваш Telegram (ссылка или юзернейм) <span class="required">*</span>
@@ -72,31 +70,47 @@
                             <span class="form-hint">Для быстрой связи, если понадобится уточнить детали.</span>
                         </div>
 
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="agreeTelegram" name="agreeTelegram" value="Да" required />
-                                <span class="checkmark"></span>
-                                Подписаны ли вы на ТГК Проекта? <strong>«LYRA 3 сезон | Minecraft Server»</strong> <span class="required">*</span>
-                            </label>
-                            <span class="form-hint" style="margin-top: 4px;">Подписка обязательна для получения доступа.</span>
-                        </div>
+<!-- 3. Подписка на ТГК -->
+<div class="form-group checkbox-group">
+    <label class="checkbox-label">
+        <input type="checkbox" id="agreeTelegram" name="agreeTelegram" value="Да" required />
+        <span class="checkmark"></span>
+        Подписаны ли вы на 
+        <a href="https://t.me/lyra_mc" target="_blank" class="rules-link" style="font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fab fa-telegram-plane" style="color: #26A5E4;"></i>
+            ТГК Проекта «LYRA 3 сезон | Minecraft Server»
+        </a>
+        <span class="required">*</span>
+    </label>
+    <span class="form-hint" style="margin-top: 4px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+        <i class="fas fa-external-link-alt" style="font-size: 12px; color: var(--orange-400);"></i>
+        Подписка обязательна для получения доступа.
+        <a href="https://t.me/lyra_mc" target="_blank" class="rules-link" style="font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+            <i class="fab fa-telegram-plane" style="color: #26A5E4;"></i>
+            Перейти в Telegram
+        </a>
+    </span>
+</div>
 
+                        <!-- 4. Ник в игре -->
                         <div class="form-group">
                             <label for="nickname">
                                 <i class="fas fa-user"></i> Ваш ник в игре <span class="required">*</span>
                             </label>
                             <input type="text" id="nickname" name="nickname" placeholder="Введите ваш игровой ник" required />
-                            <span class="form-hint">ПРИЛИЧНЫЙ НИК</span>
+                            <span class="form-hint">Приличный ник без оскорблений и спецсимволов.</span>
                         </div>
 
+                        <!-- 5. Стриминг -->
                         <div class="form-group">
                             <label for="streaming">
                                 <i class="fas fa-broadcast-tower"></i> Стримите ли вы где-нибудь? <span class="required">*</span>
                             </label>
                             <input type="text" id="streaming" name="streaming" placeholder="Ник / платформа / прочерк" required />
-                            <span class="form-hint">Пример: WERSTAPEN - TWITCH или просто «-»</span>
+                            <span class="form-hint">Пример: WERSTAPEN - TWITCH или просто «—»</span>
                         </div>
 
+                        <!-- 6. Возраст -->
                         <div class="form-group">
                             <label for="age">
                                 <i class="fas fa-calendar-alt"></i> Сколько вам лет? <span class="required">*</span>
@@ -104,6 +118,7 @@
                             <input type="number" id="age" name="age" placeholder="Например: 18" min="10" max="99" required />
                         </div>
 
+                        <!-- 7. Часовой пояс -->
                         <div class="form-group">
                             <label for="timezone">
                                 <i class="fas fa-clock"></i> Ваш часовой пояс от МСК
@@ -112,6 +127,7 @@
                             <span class="form-hint">Укажите разницу с Московским временем.</span>
                         </div>
 
+                        <!-- 8. Откуда узнали -->
                         <div class="form-group">
                             <label for="source">
                                 <i class="fas fa-search"></i> От кого вы узнали о сервере? <span class="required">*</span>
@@ -120,12 +136,13 @@
                             <span class="form-hint">Укажите имя стримера, друга или источник.</span>
                         </div>
 
+                        <!-- 9. Ник на Твиче -->
                         <div class="form-group">
                             <label for="twitch">
                                 <i class="fab fa-twitch"></i> Ваш ник на Twitch <span class="required">*</span>
                             </label>
                             <input type="text" id="twitch" name="twitch" placeholder="Ваш ник на Twitch" required />
-                            <span class="form-hint">Если нет - напишите «-».</span>
+                            <span class="form-hint">Если нет — напишите «—».</span>
                         </div>
 
                         <div class="form-group checkbox-group">
@@ -186,7 +203,7 @@
                     <i class="fas fa-cube"></i>
                     <span>LYRA</span>
                 </div>
-                <p>LYRA 3 сезон - приватный Minecraft-сервер.</p>
+                <p>LYRA 3 сезон — приватный Minecraft-сервер без вайпов с 2024 года.</p>
             </div>
             <div class="footer-col">
                 <h4>Соцсети</h4>
@@ -202,7 +219,7 @@
             <div class="footer-col">
                 <h4>Сервер</h4>
                 <p><i class="fas fa-server"></i> play.lyra-server.ru</p>
-                <p><i class="fas fa-code-branch"></i> Версия 1.21.11</p>
+                <p><i class="fas fa-code-branch"></i> Версия 1.21.8</p>
                 <p><i class="fas fa-microphone"></i> Plasmo Voice</p>
             </div>
         </div>
@@ -218,21 +235,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const isSuccess = urlParams.get('success') === 'true';
-
-            const formContainer = document.getElementById('formContainer');
-            const successContainer = document.getElementById('successContainer');
-            const alternativeBlock = document.getElementById('alternativeBlock');
-
-            if (isSuccess) {
-                formContainer.style.display = 'none';
-                successContainer.style.display = 'block';
-                alternativeBlock.style.display = 'none';
-                
-                document.title = 'Заявка отправлена — LYRA';
-            }
-
             const themeToggle = document.getElementById('themeToggle');
             if (themeToggle) {
                 themeToggle.addEventListener('click', function() {
@@ -241,7 +243,6 @@
                     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
                     html.setAttribute('data-theme', newTheme);
                     localStorage.setItem('theme', newTheme);
-
                     const icon = this.querySelector('i');
                     icon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
                 });
@@ -256,6 +257,7 @@
                 }
             }
 
+            // ===== ССЫЛКИ НА СОЦСЕТИ =====
             const telegramLink = document.getElementById('telegramLink');
             const discordLink = document.getElementById('discordLink');
 
@@ -270,27 +272,57 @@
             }
 
             const form = document.getElementById('applyForm');
+            const formContainer = document.getElementById('formContainer');
+            const successContainer = document.getElementById('successContainer');
+            const alternativeBlock = document.getElementById('alternativeBlock');
+
             if (form) {
-                form.addEventListener('submit', function(e) {
+                form.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+
+                    const formData = new FormData(form);
+                    const submitBtn = form.querySelector('.submit-btn');
+
                     const agreeRules = document.getElementById('agreeRules');
                     const agreeTelegram = document.getElementById('agreeTelegram');
 
                     if (!agreeRules.checked) {
-                        e.preventDefault();
-                        alert('Необходимо согласиться с правилами сервера.');
-                        return false;
+                        alert('❌ Необходимо согласиться с правилами сервера.');
+                        return;
                     }
 
                     if (!agreeTelegram.checked) {
-                        e.preventDefault();
-                        alert('Вы должны быть подписаны на Telegram-канал LYRA.');
-                        return false;
+                        alert('❌ Вы должны быть подписаны на Telegram-канал LYRA.');
+                        return;
                     }
 
-                    const submitBtn = form.querySelector('.submit-btn');
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
 
+                    try {
+                        const response = await fetch('https://formsubmit.co/ajax/sony.krush@gmail.com', {
+                            method: 'POST',
+                            body: formData
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            formContainer.style.display = 'none';
+                            successContainer.style.display = 'block';
+                            alternativeBlock.style.display = 'none';
+                            document.title = 'Заявка отправлена — LYRA';
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        } else {
+                            throw new Error('Ошибка отправки');
+                        }
+                    } catch (error) {
+                        alert('❌ Ошибка отправки. Попробуйте позже.');
+                        console.error('Ошибка:', error);
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Отправить заявку';
+                    }
                 });
             }
         });
